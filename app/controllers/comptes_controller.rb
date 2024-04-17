@@ -38,7 +38,7 @@ class ComptesController < ApplicationController
   def update
     respond_to do |format|
       if @compte.update(compte_params)
-        format.html { redirect_to compte_url(@compte), notice: "Compte was successfully updated." }
+        format.html { redirect_to comptes_path, notice: "Compte was successfully updated." }
         format.json { render :show, status: :ok, location: @compte }
       else
         format.html { render :edit, status: :unprocessable_entity }
