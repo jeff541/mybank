@@ -1,0 +1,16 @@
+<ul role="list" class="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
+<% @comptes.each do |compte| %>
+  <%= render  compte %>
+  <% end %>
+
+</ul>
+<script>
+    function toggle(compteID) {
+        var menu=document.getElementById(compteID);
+        if (menu.classList.contains("opacity-0")) {
+            menu.classList.remove("opacity-0")
+        } else {
+            menu.classList.add("opacity-0")
+        }
+    }
+</script>

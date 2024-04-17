@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @compte
+
+div
+  => link_to "Edit this compte", edit_compte_path(@compte)
+  '|
+  =< link_to "Back to comptes", comptes_path
+
+  = button_to "Destroy this compte", @compte, method: :delete
