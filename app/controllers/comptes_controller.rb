@@ -25,7 +25,7 @@ class ComptesController < ApplicationController
 
     respond_to do |format|
       if @compte.save
-        format.html { redirect_to compte_url(@compte), notice: "Compte was successfully created." }
+        format.html { redirect_to comptes_path, notice: "Compte was successfully created." }
         format.json { render :show, status: :created, location: @compte }
       else
         format.html { render :new, status: :unprocessable_entity }

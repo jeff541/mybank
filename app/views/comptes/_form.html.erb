@@ -1,27 +1,18 @@
-<%= form_with(model: compte) do |form| %>
-  <% if compte.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(compte.errors.count, "error") %> prohibited this compte from being saved:</h2>
+<%= simple_form_for compte, html: {class: "contents"} do |f| %>
+  <div class="h-0 flex-1">
+    <div class="overflow-x-auto overflow-y-auto h-full pt-2">
+      <div class="grid grid-cols-12 gap-x-4 gap-y-6">
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <ul>
-        <% compte.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <div class="col-span-full">
+          <%= f.input :name, required: true, label_html: {class: "block text-sm font-medium leading-6 text-gray-900 mb-2"}, input_html: {class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"} %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  </div>
+  <div class="flex-shrink-0 justify-end mb-6 mt-6">
+    <%= f.button :submit, class: "flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
