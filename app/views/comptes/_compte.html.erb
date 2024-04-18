@@ -13,6 +13,7 @@
       <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right opacity-0 rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" id="<%= compte.id %>"  role="menu" aria-orientation="vertical" aria-labelledby="options-menu-1-button" tabindex="-1">
         <!-- Active: "bg-gray-50", Not Active: "" -->
         <%= link_to edit_compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Edit<span class="sr-only">, SavvyCal</span><% end %>
+        <%= link_to set_amount_compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Set<span class="sr-only">, SavvyCal</span><% end %>
       </div>
     </div>
   </div>
