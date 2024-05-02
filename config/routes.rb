@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :dettes do
+    get 'set_amount', on: :member
+    patch 'update_amount', on: :member
+  end
   resources :comptes do
     get 'set_amount', on: :member
     patch 'update_amount', on: :member

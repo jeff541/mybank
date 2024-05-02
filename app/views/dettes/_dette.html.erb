@@ -1,0 +1,34 @@
+<li id="<%= dom_id dette %>" class="overflow-hidden rounded-xl border border-gray-200">
+  <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
+    <img src="https://cdn-res.keymedia.com/cdn-cgi/image/f=auto/https://cdn-res.keymedia.com/cms/images/ca/155/0399_638376040933625005.jpg" alt="SavvyCal" class="h-12 w-12 flex-none rounded-lg bg-white object-cover ring-1 ring-gray-900/10">
+    <div class="text-sm font-medium leading-6 text-gray-900"><%=dette.name %></div>
+    <div class="relative ml-auto">
+      <button onclick="toggle('<%= dette.id %>')" type="button" class="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500" id="options-menu-1-button" aria-expanded="false" aria-haspopup="true">
+        <span  class="sr-only">Open options</span>
+        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M3 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM8.5 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM15.5 8.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+        </svg>
+      </button>
+
+      <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right opacity-0 rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" id="<%= dette.id %>"  role="menu" aria-orientation="vertical" aria-labelledby="options-menu-1-button" tabindex="-1">
+        <!-- Active: "bg-gray-50", Not Active: "" -->
+        <%= link_to edit_dette_path(dette), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Edit<span class="sr-only">, SavvyCal</span><% end %>
+        <%= link_to set_amount_dette_path(dette), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Set<span class="sr-only">, SavvyCal</span><% end %>
+        <%= link_to dette_path(dette), class:"block px-3 py-1 text-sm leading-6 text-red-600", method: :delete, data: {confirm: t("expressions.are_you_sure")} do%>delete<span class="sr-only">, SavvyCal</span><% end %>
+      </div>
+    </div>
+  </div>
+  <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm leading-6">
+    <div class="flex justify-between gap-x-4 py-3">
+      <dt class="text-gray-500">Last update</dt>
+      <dd class="text-gray-700"><time datetime="2023-01-22"><%= dette.updated_at || dette.creaated_at %></time></dd>
+    </div>
+    <div class="flex justify-between gap-x-4 py-3">
+      <dt class="text-gray-500">Amount</dt>
+      <dd class="flex items-start gap-x-2">
+        <div class="font-medium text-gray-900"><%=dette.amount %></div>
+        <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">Paid</div>
+      </dd>
+    </div>
+  </dl>
+</li>

@@ -65,7 +65,7 @@ class ComptesController < ApplicationController
     @compte.destroy!
 
     respond_to do |format|
-      format.html { redirect_to comptes_url, notice: "Compte was successfully destroyed." }
+      format.html { redirect_to comptes_path, notice: "Compte was successfully destroyed." }
       format.json { head :no_content }
     end
   end
