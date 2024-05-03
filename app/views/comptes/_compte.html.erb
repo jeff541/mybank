@@ -14,7 +14,7 @@
         <!-- Active: "bg-gray-50", Not Active: "" -->
         <%= link_to edit_compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Edit<span class="sr-only">, SavvyCal</span><% end %>
         <%= link_to set_amount_compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-gray-900" do%>Set<span class="sr-only">, SavvyCal</span><% end %>
-        <%= link_to compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-red-600", method: :delete, data: {confirm: t("expressions.are_you_sure")} do%>delete<span class="sr-only">, SavvyCal</span><% end %>
+        <%= link_to compte_path(compte), class:"block px-3 py-1 text-sm leading-6 text-red-600",  data: {confirm: "are_you_sure", "turbo-method": :delete} do%>delete<span class="sr-only">, SavvyCal</span><% end %>
       </div>
     </div>
   </div>

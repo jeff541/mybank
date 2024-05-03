@@ -62,7 +62,7 @@ class DettesController < ApplicationController
 
   # DELETE /comptes/1 or /comptes/1.json
   def destroy
-    @compte.destroy!
+    @dette.destroy!
 
     respond_to do |format|
       format.html { redirect_to dettes_path, notice: "Dette was successfully destroyed." }
