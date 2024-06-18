@@ -27,8 +27,8 @@ class DettesController < ApplicationController
   end
   def update_amount
     @dette = Dette.find(params[:id])
-    transaction_type = params[:compte][:transaction_type]
-    transaction_amount = params[:compte][:transaction_amount].to_i
+    transaction_type = params[:dette][:transaction_type]
+    transaction_amount = params[:dette][:transaction_amount].to_i
     @dette.set_amount(transaction_amount,transaction_type)
     redirect_to dettes_path, notice: 'Debt updated successfully.'
   end
