@@ -1,0 +1,33 @@
+<div class="flex h-full flex-col bg-white px-6">
+  <div class="flex-none z-0 py-6">
+    <%= link_to :back, class: "flex w-full" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
+      </svg>
+      <div>
+        <p><%= @dette.name %></p>
+        <p class="text-sm">edit</p>
+      </div>
+    <% end %>
+  </div>
+  <%= form_with(model: @dette, url: update_amount_dette_path(@dette), method: :patch, class: 'contents') do |form| %>
+    <div class="h-0 flex-1">
+      <div class="overflow-x-auto overflow-y-auto h-full pt-2">
+        <div class="grid grid-cols-12 gap-x-4 gap-y-6">
+          <div class="col-span-full">
+            <%= form.label :transaction_type, class: 'block text-sm font-medium leading-6 text-gray-900 mb-2' %>
+            <%= form.select :transaction_type, [['Add', 'add'], ['Remove', 'remove']], { class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6', required: true, selected: 'add' } %> </div>
+
+          <div class="col-span-full">
+            <%= form.label :transaction_amount, class: 'block text-sm font-medium leading-6 text-gray-900 mb-2' %>
+            <%= form.number_field :transaction_amount, class: 'block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6', required: true %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-shrink-0 justify-end mb-6 mt-6">
+      <%= form.submit 'Submit', class: 'flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2' %>
+    </div>
+  <% end %>
+</div>
+</div>

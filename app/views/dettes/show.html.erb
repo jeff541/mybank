@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dette %>
+
+<div>
+  <%= link_to "Edit this dette", edit_dette_path(@dette) %> |
+  <%= link_to "Back to dettes", dettes_path %>
+
+  <%= button_to "Destroy this dette", @dette, method: :delete %>
+</div>

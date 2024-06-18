@@ -38,8 +38,11 @@
               <%= link_to root_path , class:"rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" do %>
                 Home
               <% end %>
-              <%= link_to new_compte_path , class:"rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" do %>
-                New Account
+              <%= link_to comptes_path , class:"rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" do %>
+                Accounts
+              <% end %>
+              <%= link_to dettes_path , class:"rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" do %>
+                Debts
               <% end %>
               <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
               <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
@@ -117,9 +120,12 @@
         <%= link_to root_path , class:"block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" do %>
           Home
         <% end %>
-        <%= link_to new_compte_path , class:"block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" do %>
-          New Account
+        <%= link_to comptes_path , class:"block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" do %>
+          Accounts
           <% end %>
+        <%= link_to dettes_path , class:"block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" do %>
+          debts
+        <% end %>
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
